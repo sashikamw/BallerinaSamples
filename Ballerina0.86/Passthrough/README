@@ -5,9 +5,9 @@ This sample will passthrough the message to the backend and response to the clie
 2) XML payload
 
 
-Starting the Service
-=====================
-Start "passthrough.bal" service
+How to run this sample
+======================
+Go to <Ballerina_HOME>/bin and run "./ballerina run service <Artifact_HOME>/passthrough.bal
 
 
 Invoking the service
@@ -42,6 +42,8 @@ Header -> SOAPAction - urn:getQuote , Content-Type - text/xml;charset=UTF-8
 --------------
 URL - http://localhost:9090/passthroughjson/
 
+
+Note - To work with HTTPS transport, chnage the 'listenerConfigurations' of the netty-transports.yml file as "default" for HTTPS.
 
 
 
