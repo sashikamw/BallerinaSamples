@@ -1,6 +1,5 @@
  import ballerina.lang.messages;
 import ballerina.net.http;
-import ballerina.lang.system;
 
 @http:BasePath{value:"/passthroughxml"} 
 service SoapPassthroughService {
@@ -9,12 +8,10 @@ service SoapPassthroughService {
     @http:Path {value:"/"} 
 	resource PassthroughXml( message m) {
 		xml incomingPayload = messages:getXmlPayload(m);
-		system:println(incomingPayload);
 		http:ClientConnector stockEP = create http:ClientConnector("http://localhost:9000/services/SimpleStockQuoteService");
 		messages:setXmlPayload(m, incomingPayload);
 		messages:removeHeader(m, "Content-Type");
 		messages:addHeader(m, "Content-Type", "text/xml;charset=UTF-8");
-		system:println(m);
 		message reponse = http:ClientConnector.post(stockEP, "", m);
 		reply reponse;
 		
