@@ -1,0 +1,42 @@
+Description
+===========
+Passthrough Samples
+1) Passthrough.bal - passthrough basic sample
+2) PassthroughPredefinedEPEnvVariable.bal - passthrough service with predefined endpoints (endpoint extrated via environemental variables)
+3) PassthroughPredefinedEPGlobalVariable.bal - passthrough service with predefined endpoints (global file that contain the endpoint references)
+
+
+How to Run
+================
+1) Execute the ballerina package as "../ballerina-tools-0.87/bin/ballerina run service Passtrough/"
+
+
+Invoking the service
+====================
+
+Pre-Requisits
+--------------
+Start SimpleStockQuote Service
+
+Execution
+-----------
+Send following payload using a client
+
+URL - http://localhost:9090/passthroughxml/
+payload 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.samples" xmlns:xsd="http://services.samples/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getQuote>
+         <!--Optional:-->
+         <ser:request>
+            <!--Optional:-->
+            <xsd:symbol>Test6</xsd:symbol>
+         </ser:request>
+      </ser:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Header -> SOAPAction - urn:getQuote , Content-Type - text/xml;charset=UTF-8
+

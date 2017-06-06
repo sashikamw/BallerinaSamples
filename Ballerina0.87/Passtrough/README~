@@ -1,0 +1,6 @@
+How to Run
+================
+
+1) Go to /home/sashika/Apps/Applications/Ballerina/BallerinaSamples and execute "../ballerina-tools-0.86/bin/ballerina run service Passtrough/"
+
+2) 

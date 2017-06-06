@@ -1,0 +1,49 @@
+Description
+===========
+This sample will passthrough the message to the backend and response to the client
+1) Json payload
+2) XML payload
+
+
+How to run this sample
+======================
+Go to <Ballerina_HOME>/bin and run "./ballerina run service <Artifact_HOME>/passthrough.bal
+
+
+Invoking the service
+====================
+
+1) Service 01
+--------------
+
+1.1) Start SimpleStockQuote Service
+
+1.2) Send following payload using a client
+URL - http://localhost:9090/passthroughxml/
+payload 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.samples" xmlns:xsd="http://services.samples/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:getQuote>
+         <!--Optional:-->
+         <ser:request>
+            <!--Optional:-->
+            <xsd:symbol>Test6</xsd:symbol>
+         </ser:request>
+      </ser:getQuote>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Header -> SOAPAction - urn:getQuote , Content-Type - text/xml;charset=UTF-8
+
+
+2) Service 02
+--------------
+URL - http://localhost:9090/passthroughjson/
+
+
+Note - To work with HTTPS transport, chnage the 'listenerConfigurations' of the netty-transports.yml file as "default" for HTTPS.
+
+
+
