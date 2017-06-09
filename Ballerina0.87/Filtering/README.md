@@ -7,7 +7,7 @@ Sample scenarios related to message filtering / routing based on following crite
 
 ##### **How to run this sample**
 
-Go to /home/sashika/Apps/Applications/Ballerina/BallerinaSamples and execute "../ballerina-tools-0.87/bin/ballerina run service FilterMediator"
+Download the ballerina0.87 samples and go to "Ballerina0.87" directory. Then execute "<Ballerina_HOME>/bin/ballerina run service Filtering/"
 
 
 ##### **Invoking the services**
